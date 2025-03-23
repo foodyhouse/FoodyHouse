@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/webp" href="assets/faviconn.webp" />
+    <title>Conform Page</title>
+    <link rel="stylesheet" href="palce.css" />
+  </head>
+  <body>
+    <div class="form">
+      <div class="container">
+        <h1>Are you sure, <br />Do you want to place order?</h1>
+        <button type="submit" class="btn" onclick="openPopup()">Conform</button>
+        <div class="popup" id="popup">
+          <img src="Tick2.0.png" />
+          <h2>Order Placed!</h2>
+          <p>Your Order has been placed Successfully</p>
+          <button type="button" onclick="closePopup()" id="btn">ok</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let popup = document.getElementById("popup");
+
+      function openPopup() {
+        popup.classList.add("open-popup");
+      }
+      function closePopup() {
+        popup.classList.remove("open-popup");
+      }
+      document.getElementById("bt").onclick = function () {
+        window.location.href = "index.html";
+      };
+    </script>
+  </body>
+</html>

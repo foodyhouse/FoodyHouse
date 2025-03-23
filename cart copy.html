@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/webp" href="assets/faviconn.webp" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Foody House Cart</title>
+    <style>
+      * {
+        font-family: "Roboto", sans-serif;
+      }
+      body {
+        background-color: rgb(225, 211, 211);
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+      }
+      .placeorder {
+        font-weight: 600;
+        background-color: white;
+        color: black;
+        padding: 8px 12px;
+        border-radius: 18px;
+        text-decoration: none;
+      }
+      .placeorder:active {
+        color: white;
+        background-color: black;
+      }
+      .logo {
+        width: 45px;
+        border-radius: 50%;
+      }
+      .cart-item {
+        background-color: white;
+        display: inline-flex;
+        width: 200px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        margin: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      @media screen and (max-width: 540px) {
+        .cart-item {
+          background-color: white;
+          display: block;
+          align-items: center;
+          padding: 10px 20px;
+          margin-top: 20px;
+          margin-left: 15%;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .cart-item img {
+        width: 200px;
+        height: 200px;
+      }
+      .remove-button {
+        align-items: center;
+        margin-top: 10px;
+        padding: 5px 10px;
+        cursor: pointer;
+        background-color: red;
+        color: white;
+        border: none;
+      }
+      #totalItems {
+        border-radius: 50%;
+        padding: 4px;
+        color: red;
+        font-weight: 600;
+        background: white;
+        margin-left: 0px;
+        font-size: 12px;
+      }
+      .yourcart {
+        display: flex;
+        align-items: center;
+      }
+      #empty {
+        display: flex;
+        font-size: 50px;
+        font-weight: 700;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="header">
+      <div class="yourcart">
+        <img src="assets/cartIcon.jpg" alt="cart" class="logo" />
+        <h2 style="margin-left: 4px" id="yourcart">Your Cart</h2>
+      </div>
+
+      <div id="none">
+        <a href="payment.html" class="placeorder">Place Order</a>
+      </div>
+    </nav>
+    <div id="empty"></div>
+    <div id="cartItemsContainer"></div>
+
+    <script>
+      function loadCart() {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const Total = cartItems.length;
+        //document.getElementById("totalItems").textContent = Total;
+        if (Total === 0) {
+          document.getElementById("empty").textContent = `Cart Is Empty`;
+          const yourcart = document.getElementById("none");
+          yourcart.style.display = "none";
+        }
+
+        const cartItemsContainer =
+          document.getElementById("cartItemsContainer");
+        cartItemsContainer.innerHTML = ""; // Clear any previous items
+
+        // Create and display each item in the cart
+        cartItems.forEach((item, index) => {
+          const cartItemDiv = document.createElement("div");
+          cartItemDiv.classList.add("cart-item");
+
+          const itemImage = document.createElement("img");
+          itemImage.src = item.image;
+          cartItemDiv.appendChild(itemImage);
+
+          const itemName = document.createElement("h3");
+          itemName.innerText = item.name;
+          cartItemDiv.appendChild(itemName);
+
+          const itemPrice = document.createElement("p");
+          itemPrice.innerText = item.price;
+          cartItemDiv.appendChild(itemPrice);
+
+          const removeButton = document.createElement("button");
+          removeButton.classList.add("remove-button");
+          removeButton.innerText = "Remove";
+          removeButton.onclick = function () {
+            removeItemFromCart(index);
+          };
+          cartItemDiv.appendChild(removeButton);
+
+          cartItemsContainer.appendChild(cartItemDiv);
+        });
+      }
+
+      function removeItemFromCart(index) {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        cartItems.splice(index, 1); // Remove the item at the specified index
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        loadCart(); // Reload the cart after removal
+      }
+
+      // Load the cart when the page loads
+      window.onload = loadCart;
+    </script>
+  </body>
+</html>

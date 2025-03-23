@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/webp" href="assets/faviconn.webp" />
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payment.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form onsubmit="return validateForm()">
+        <div class="row">
+          <div class="column">
+            <h3 class="title">Your Address</h3>
+            <div class="input-box">
+              <span>Full Name:</span>
+              <input
+                type="text"
+                placeholder="Enter Full Name"
+                required
+                id="Fill1"
+                class="Fill"
+              />
+            </div>
+            <div class="input-box">
+              <span>Email:</span>
+              <input
+                type="email"
+                placeholder="example@example.com"
+                required
+                id="Fill2"
+                class="Fill"
+              />
+            </div>
+            <div class="input-box">
+              <span>Address:</span>
+              <input
+                type="text"
+                placeholder="Room - Street - Locality"
+                required
+                id="Fill3"
+                class="Fill"
+              />
+            </div>
+            <div class="input-box">
+              <span>City:</span>
+              <input
+                type="text"
+                placeholder="Bhimavaram"
+                required
+                id="Fill4"
+                class="Fill"
+              />
+            </div>
+            <div class="flex">
+              <div class="input-box">
+                <span>State :</span>
+                <input
+                  type="text"
+                  placeholder="Andhra Pradesh"
+                  required
+                  id="Fill5"
+                  class="Fill"
+                />
+              </div>
+              <div class="input-box">
+                <span>Pin Code :</span>
+                <input
+                  type="Number"
+                  placeholder="123 456"
+                  required
+                  id="Fill6"
+                  class="Fill"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <h3 class="title">Payment</h3>
+            <div class="input-box">
+              <span>UPI Payments:</span>
+              <div class="images">
+                <img src="assets/phonePay.jpg" />
+                <img src="assets/amazonPay.jpg" />
+                <img src="assets/GooglePay.jpg" />
+                <img
+                  src="assets/payPal.jpg                                                                                                                                                                                         "
+                />
+              </div>
+            </div>
+            <div class="input-box">
+              <span style="font-weight: 700; font-size: 20px"
+                >Card Payment:</span
+              >
+              <input
+                type="text"
+                placeholder="Enter Card Holder Name"
+                required
+                id="Fill7"
+                class="Fill"
+              />
+            </div>
+            <div class="input-box">
+              <span>Credit Cared Number:</span>
+              <input
+                type="number"
+                placeholder="1111 2222 3333 4444"
+                id="Fill8"
+                class="Fill"
+              />
+            </div>
+            <div class="input-box">
+              <span>Exp. Month</span>
+              <input
+                type="text"
+                placeholder="January"
+                class="Fill9"
+                class="Fill"
+              />
+            </div>
+            <div class="flex">
+              <div class="input-box">
+                <span>Exp. Year</span>
+                <input
+                  type="number"
+                  placeholder="2025"
+                  id="Fill10"
+                  class="Fill"
+                />
+              </div>
+              <div class="input-box">
+                <span>Cvv :</span>
+                <input
+                  type="Number"
+                  placeholder="123"
+                  id="Fill11"
+                  class="Fill"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Next</button>
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        var inputs = document.querySelectorAll("input");
+        for (var i = 0; i < inputs.length; i++) {
+          if (inputs[i].value.trim() === "") {
+            alert("fill");
+            return false;
+          }
+        }
+        window.location.href = "order.html";
+        return false;
+      }
+    </script>
+  </body>
+</html>

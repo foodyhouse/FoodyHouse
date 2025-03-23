@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        .product {
+            display: inline-block;
+            width: 200px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .cart-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Products</h1>
+    <div class="product">
+        <img src="product1.jpg" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$10.00</p>
+        <button class="cart-button" onclick="addToCart('product1.jpg', 'Product 1', '$10.00')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="product2.jpg" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>$15.00</p>
+        <button class="cart-button" onclick="addToCart('product2.jpg', 'Product 2', '$15.00')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="product3.jpg" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>$20.00</p>
+        <button class="cart-button" onclick="addToCart('product3.jpg', 'Product 3', '$20.00')">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="product3.jpg" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>$20.00</p>
+        <button class="cart-button" onclick="addToCart('product3.jpg', 'Product 3', '$20.00')">Add to Cart</button>
+    </div>
+
+    <script>
+        function addToCart(image, name, price) {
+            // Retrieve cart items from localStorage
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Add the new item to the cart array
+            cartItems.push({ image, name, price });
+
+            // Save the updated cart items back to localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            alert(name + ' has been added to your cart!');
+        }
+    </script>
+</body>
+</html>
