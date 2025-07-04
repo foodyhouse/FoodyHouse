@@ -12,6 +12,7 @@
 - 🧭 Clean and Intuitive Interface: User-friendly layout and design for seamless interaction.
 
 - 🍔 Browse Menu – View a variety of food items with images, descriptions, and prices
+- 🤖 AI Chat Bot - A Foody Bot that suggest Food based upon you mood or diet plan
 
 - 🛒 Add to Cart – Easily add and manage items in the shopping cart
 - 💾 Local Storage Integration: Cart items are stored locally, so users retain them between sessions.
@@ -28,4 +29,5 @@
   - Surya Teja Katta
   - Madhu Peruboina
   - Sasank Varma Mukku
-  
+  ## ✉️ Contact us
+  - Email : foodyhouse05@gmal.com
