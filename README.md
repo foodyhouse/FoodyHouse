@@ -1,13 +1,13 @@
 
- # 🍽️ Food House
+ # 🍽️ Foody House
 
 #### 🔰overview
 - Food House is a responsive food ordering website where users can browse a variety of delicious meals and easily place orders online. The site features a user-friendly interface, a functional cart page to manage selected items, and a seamless ordering experience across all devices.
 
 ## Live Website
-#### 🚀Experience Food House in Live!
+#### 🚀Experience Foody House in Live!
 🔗Live Demo :
-[Food House Live Link]( https://foodyhouse.github.io/FoodyHouse/)
+[Foody House Live Link]( https://foodyhouse.github.io/FoodyHouse/)
 ## Features
 - 🧭 Clean and Intuitive Interface: User-friendly layout and design for seamless interaction.
 
