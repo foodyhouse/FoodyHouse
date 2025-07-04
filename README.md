@@ -29,5 +29,5 @@
   - Surya Teja Katta
   - Madhu Peruboina
   - Sasank Varma Mukku
-  ## ✉️ Contact us
-  - Email : foodyhouse05@gmal.com
+## ✉️ Contact us
+- Email : foodyhouse05@gmal.com
