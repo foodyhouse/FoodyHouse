@@ -2,7 +2,7 @@ const chatBody = document.querySelector(".chat-body");
 const messageInput = document.querySelector(".message-input");
 const sendMessasgeButton = document.querySelector("#send-message");
 //API setup
-const API_KEY = "";
+const API_KEY = "REPLACE YOUR API KEY HERE"; // Get an Api key and replace it with text
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 const userData = {
   message: null,
